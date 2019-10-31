@@ -28,6 +28,12 @@ yarn app -list -appStates RUNNING
 yarn app -list -appStates FINISHED
 ```
 
+## List the Last 3 Finished Jobs by User `<user>`
+
+```
+yarn app -list -appStates FINISHED | grep <user> | sort -r | head -3
+```
+
 ## Inspecting Yarn Application Logs
 
 ```
