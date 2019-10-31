@@ -1,8 +1,8 @@
 from pyspark import SparkContext, SparkConf
 
-APP_NAME = 'zips-jh'
-INPUT_FILE = 'hdfs:///user/spark/producers.csv'
-OUTPUT_FILE = 'hdfs:///user/spark/jh/counts'
+APP_NAME = 'zips'
+INPUT_FILE = 'hdfs:///data/producers.csv'
+OUTPUT_FILE = 'hdfs:///user/jh/counts'
 
 conf = SparkConf().setAppName(APP_NAME).setMaster('yarn')
 sc = SparkContext(conf=conf)
