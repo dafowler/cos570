@@ -2,8 +2,8 @@ from pyspark import SparkContext, SparkConf
 from pyspark.sql import SQLContext
 
 USER = 'jh'
-APP_NAME = 'template.py'
-INPUT_FILE = 'hdfs:///data/template.csv'
+APP_NAME = 'template'
+INPUT_FILE = 'hdfs:///data/template.parquet'
 OUTPUT_FILE = 'result.csv'
 OUTPUT_PATH = 'hdfs:///user/'+USER+'/'+OUTPUT_FILE
 
@@ -11,6 +11,7 @@ conf = SparkConf().setAppName(APP_NAME).setMaster('yarn')
 sc = SparkContext(conf=conf)
 sqlContext = SQLContext(sc)
 
-df = sqlContext.read.csv(INPUT_FILE, header=True)
+df = sqlContext.read.parquet(INPUT_FILE)
 
-df.write.csv(OUTPUT_PATH, mode='overwrite')
+df1 = df.coalesce(1)
+df1.write.csv(OUTPUT_PATH, mode='overwrite', header=True)
