@@ -34,6 +34,12 @@ yarn app -list -appStates FINISHED
 yarn app -list -appStates FINISHED | grep <user> | sort -r | head -3
 ```
 
+## List the Last 3 Finished Jobs by User `<user>`, Enable Horizontal Scrolling
+
+```
+yarn app -list -appStates FINISHED | grep <user> | sort -r | head -3 | less -S
+```
+
 ## Inspecting Yarn Application Logs
 
 ```
