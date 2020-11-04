@@ -13,7 +13,7 @@ pyspark
 
 The Python script is named `zips.py`.
 ```
-spark-submit zips.py --master yarn --deploy-mode cluster
+spark-submit --master yarn --deploy-mode cluster zips.py
 ```
 
 ## Listing All Running Yarn Jobs
