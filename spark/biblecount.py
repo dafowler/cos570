@@ -1,6 +1,6 @@
 from pyspark.sql import SparkSession
 
-OUTPUT_FILE = 'hdfs:///user/jh/biblecounts.txt'
+OUTPUT_FILE = 'hdfs:///user/david-fowler/biblecounts.txt'
 INPUT_FILE = 'hdfs:///data/king-james-bible.txt'
 
 spark = SparkSession.builder.appName('biblecount').getOrCreate()
