@@ -11,7 +11,7 @@ conf = SparkConf().setAppName(APP_NAME).setMaster('yarn')
 sc = SparkContext(conf=conf)
 sqlContext = SQLContext(sc)
 
-df = sqlContext.read.parquet(INPUT_FILE)
+df = sqlContext.read.csv(INPUT_FILE, header=True)
 
 df1 = df.coalesce(1)
 df1.write.csv(OUTPUT_PATH, mode='overwrite', header=True)

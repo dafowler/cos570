@@ -1,5 +1,7 @@
 from pyspark import SparkContext, SparkConf
 
+from pyspark.sql import SQLContext
+
 APP_NAME = 'zips-fowler'
 INPUT_FILE = 'hdfs:///data/producers.csv'
 OUTPUT_FILE = 'hdfs:///user/david-fowler/counts.csv'
@@ -7,9 +9,10 @@ OUTPUT_FILE = 'hdfs:///user/david-fowler/counts.csv'
 conf = SparkConf().setAppName(APP_NAME).setMaster('yarn')
 sc = SparkContext(conf=conf)
 
+
 # load data 
 producers = sc.textFile(INPUT_FILE)
-
+read.csv()
 # Pick CSV apart
 def zip(line):
     # column 2 contains the address
